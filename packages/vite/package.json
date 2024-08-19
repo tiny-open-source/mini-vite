@@ -1,15 +1,39 @@
 {
   "name": "@mini-vite/vite",
-  "version": "1.0.0",
+  "version": "0.0.0.1",
   "description": "@mini-vite/vite",
   "main": "index.js",
   "bin": {
-    "mini-vite": "bin/mini-vite"
+    "mini-vite": "bin/mini-vite.js"
   },
+  "type": "module",
   "scripts": {
+    "dev": "rimraf dist && pnpm run build-bundle -w",
+    "build-bundle": "rollup --config rollup.config.ts --configPlugin typescript",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cac": "^6.7.14",
+    "chokidar": "^3.5.3",
+    "connect": "^3.7.0",
+    "debug": "^4.3.4",
+    "es-module-lexer": "^1.2.1",
+    "esbuild": "^0.17.15",
+    "magic-string": "^0.30.0",
+    "rollup-plugin-license": "^3.0.1",
+    "tslib": "^2.5.0",
+    "vite": "^4.2.0",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/connect": "^3.4.35",
+    "@types/debug": "^4.1.7",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.15.11",
+    "dep-types": "link:./src/types",
+    "types": "link:./types"
+  }
 }

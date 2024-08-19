@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { performance } from 'node:perf_hooks'
 
-console.log('test bin command')
-require("../dist/index.js");
+global.__vite_start_time = performance.now()
+import("../dist/node/cli.js");
